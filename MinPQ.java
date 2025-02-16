@@ -9,8 +9,8 @@ public class MinPQ <Key extends Comparable<Key>>{
     public boolean isEmpty(){ return N==0;}
 
     // Resizes the array based on two conditions
-    // increase array by size * 2 if size increases to N
-    // decrease array by size / 2 if size decreases to N/4
+    // increase array by size * 2 if size increases to N + 1
+    // decrease array by size / 2 if size decreases to size/4 == N + 1
 
     public void resize(int capacity) {
         Key[] copy = (Key[]) new Comparable[capacity];
