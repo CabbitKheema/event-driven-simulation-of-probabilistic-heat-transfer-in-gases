@@ -23,7 +23,14 @@ public class GenerateHeatTransferTestCase {
         int rightSideParticles = N - leftSideParticles;
         int blockerBallCount = 22;
 
-        System.out.println(N + blockerBallCount);
+        // Empty and filled with particles along with blockers
+         int totalParticlesCount = (N < 1) ? N + blockerBallCount + 3 : N + blockerBallCount;
+
+        // Filled with particles and closed blocker wall
+        // int totalParticlesCount = N + blockerBallCount + 3;
+        // One side particles without blockers
+        // int totalParticlesCount = N/2;
+        System.out.println(totalParticlesCount);
 
         int i;
         for(i = 0; i< leftSideParticles;i++){
@@ -77,6 +84,22 @@ public class GenerateHeatTransferTestCase {
             int g         = 0;
             int b         = 0;
             System.out.println(rx + " " + ry + " " + vx + " " + vy + " " + radius + " " + mass + " " + r + " " + g + " " + b);
+        }
+
+        if(N<1){
+            // If there are no particles just close the gap
+            for(i = 0; i<3; i++){
+                double rx     = 0.5;
+                double ry     = (0.5 -2 * 2 * blockerBallRadius )+(i+1)*blockerBallRadius*2;
+                double vx     = 0;
+                double vy     = 0;
+                double radius = 0.02;
+                double mass   = 100000;
+                int r         = 0;
+                int g         = 0;
+                int b         = 0;
+                System.out.println(rx + " " + ry + " " + vx + " " + vy + " " + radius + " " + mass + " " + r + " " + g + " " + b);
+            }
         }
     }
 }

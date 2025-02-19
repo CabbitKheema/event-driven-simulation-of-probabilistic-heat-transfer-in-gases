@@ -1,8 +1,38 @@
+/******************************************************************************
+ *  Compilation:  javac CollisionSystem.java
+ *  Execution:    java CollisionSystem n               (n random particles)
+ *                java CollisionSystem < input.txt     (from a file)
+ *  Dependencies: StdDraw.java Particle.java MinPQ.java
+ *  Data files:   https://algs4.cs.princeton.edu/61event/diffusion.txt
+ *                https://algs4.cs.princeton.edu/61event/diffusion2.txt
+ *                https://algs4.cs.princeton.edu/61event/diffusion3.txt
+ *                https://algs4.cs.princeton.edu/61event/brownian.txt
+ *                https://algs4.cs.princeton.edu/61event/brownian2.txt
+ *                https://algs4.cs.princeton.edu/61event/billiards5.txt
+ *                https://algs4.cs.princeton.edu/61event/pendulum.txt
+ *
+ *  Creates n random particles and simulates their motion according
+ *  to the laws of elastic collisions.
+ *
+ ******************************************************************************/
+
 import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdIn;
 
 import java.awt.Color;
 
+/**
+ *  The {@code CollisionSystem} class represents a collection of particles
+ *  moving in the unit box, according to the laws of elastic collision.
+ *  This event-based simulation relies on a priority queue.
+ *  <p>
+ *  For additional documentation,
+ *  see <a href="https://algs4.cs.princeton.edu/61event">Section 6.1</a> of
+ *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ *
+ *  @author Robert Sedgewick
+ *  @author Kevin Wayne
+ */
 public class CollisionSystem {
     private static final double HZ = 0.5;    // number of redraw events per clock tick
 
@@ -10,6 +40,12 @@ public class CollisionSystem {
     private double t  = 0.0;          // simulation clock time
     private Particle[] particles;     // the array of particles
 
+    /**
+     * Initializes a system with the specified collection of particles.
+     * The individual particles will be mutated during the simulation.
+     *
+     * @param  particles the array of particles
+     */
     public CollisionSystem(Particle[] particles) {
         this.particles = particles.clone();   // defensive copy
     }
@@ -45,6 +81,12 @@ public class CollisionSystem {
         }
     }
 
+
+    /**
+     * Simulates the system of particles for the specified amount of time.
+     *
+     * @param  limit the amount of time
+     */
     public void simulate(double limit) {
 
         // initialize PQ with collision events and redraw event
@@ -81,10 +123,23 @@ public class CollisionSystem {
         }
     }
 
+
+    /***************************************************************************
+     *  An event during a particle collision simulation. Each event contains
+     *  the time at which it will occur (assuming no supervening actions)
+     *  and the particles a and b involved.
+     *
+     *    -  a and b both null:      redraw event
+     *    -  a null, b not null:     collision with vertical wall
+     *    -  a not null, b null:     collision with horizontal wall
+     *    -  a and b both not null:  binary collision between a and b
+     *
+     ***************************************************************************/
     private static class Event implements Comparable<Event> {
         private final double time;         // time that event is scheduled to occur
         private final Particle a, b;       // particles involved in event, possibly null
         private final int countA, countB;  // collision counts at event creation
+
 
         // create a new event to occur at time t involving a and b
         public Event(double t, Particle a, Particle b) {
@@ -111,6 +166,15 @@ public class CollisionSystem {
 
     }
 
+
+    /**
+     * Unit tests the {@code CollisionSystem} data type.
+     * Reads in the particle collision system from a standard input
+     * (or generates {@code N} random particles if a command-line integer
+     * is specified); simulates the system.
+     *
+     * @param args the command-line arguments
+     */
     public static void main(String[] args) {
 
         StdDraw.setCanvasSize(600, 600);
@@ -154,3 +218,27 @@ public class CollisionSystem {
     }
 
 }
+
+/******************************************************************************
+ *  Copyright 2002-2025, Robert Sedgewick and Kevin Wayne.
+ *
+ *  This file is part of algs4.jar, which accompanies the textbook
+ *
+ *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
+ *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
+ *      http://algs4.cs.princeton.edu
+ *
+ *
+ *  algs4.jar is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  algs4.jar is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
+ ******************************************************************************/
