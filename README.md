@@ -234,12 +234,7 @@ The following steps help us in understanding the probabilistic nature of heat tr
 
 7. This allows the two closed systems to behave as open systems with the gap acting as a place where heat is transmitted by molecular conduction
 
-<div align="center">
-    <video width="500px" controls>
-        <source src="./videos/normal_heat_transfer_200_particles.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
+https://github.com/user-attachments/assets/4193918d-8a27-4d56-96e6-885087edbc79
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
