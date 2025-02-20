@@ -56,7 +56,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#deployment">Deployment</a></li>
+        <li><a href="#begin-simulation">Begin Simulation</a></li>
       </ul>
     </li>
     <li>
@@ -77,6 +77,179 @@
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+<p align="center">
+  <a href="https://github.com/CabbitKheema/event-driven-simulation-of-probabilistic-heat-transfer-in-gases">
+    <img src="images/screenshot.png" alt="Screenshot">
+  </a>
+</p>
+
+Heat transfer is often seen as a straightforward flow from hot to cold, but at the microscopic level, it’s driven by probability. Particle motion and collisions occur randomly, making energy exchange a matter of chance rather than certainty. This simulation captures that randomness through an event-driven model of individual particle interactions. A non-conductive barrier with a small gap allows for limited, probabilistic exchanges, reflecting the stochastic nature of molecular diffusion and conduction. This approach offers a clear, intuitive visualization of how random interactions govern heat transfer—revealing dynamics that traditional models often overlook.
+
+### Why This Approach is Superior?
+
+- **Realistic Particle Dynamics:** The simulation models individual particle interactions rather than relying on bulk thermodynamic equations, providing a more granular and accurate visualization of heat transfer phenomena.
+
+- **Event-Driven Efficiency:** Unlike time-stepped simulations, this event-driven approach updates only when meaningful interactions occur (like collisions), making it computationally efficient and scalable.
+
+- **Probabilistic Heat Transfer:** The use of probabilistic models for particle exchange through the barrier accurately reflects molecular diffusion and conduction, offering deeper insights into stochastic heat flow.
+
+- **Customizable Barriers and Gaps:** The inclusion of a non-conductive barrier with a modifiable gap allows exploration of different physical constraints and their effects on heat transfer rates.
+
+- **Visual Insight into Thermodynamics:** By providing an intuitive visualization of particle movement and energy exchange, the simulation serves as both a research tool and an educational resource.
+
+The simulation program is part of `algs4.jar`, which accompanies the textbook [_Algorithms, 4th Edition_][algorithms-4th-edition-url] by **Robert Sedgewick** and **Kevin Wayne**, Addison-Wesley Professional, 2011, ISBN 0-321-57351-X. It provides a framework for simulating particles undergoing elastic collisions within a unit box using an event-driven approach.
+
+Thanks to all the tools and technologies mentioned in <a href="#acknowledgments">Acknowledgments</a> section below without which this project would've been incomplete!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With
+
+- [![Java][Java]][Java-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+Download and install **JDK (Java Development Kit)** and **JRE (Java Runtime Environment)**
+  
+#### 1. Install on linux
+
+- Run the following command in the `Terminal`
+
+  ```sh
+  sudo apt install default-jdk && sudo apt install default-jre
+  ```
+
+- Verify you have this command available in your terminal and that the found version look similar to the below output
+
+  ```sh
+  java -version
+
+  openjdk version "21.0.6" 2025-01-21
+  OpenJDK Runtime Environment (build 21.0.6+7-Ubuntu-124.04.1)
+  OpenJDK 64-Bit Server VM (build 21.0.6+7-Ubuntu-124.04.1, mixed mode, sharing)
+  ```
+
+#### 2. Install on Windows
+
+- Installing Temurin (Adoptium) Java version since it’s stable, open source, and widely used. Run the following command in `Windows Powershell`
+
+  ```sh
+  winget install --id EclipseAdoptium.Temurin.21.JDK
+  ```
+
+- Verify you have this command available in your terminal and that the found version look similar to the below output
+
+  ```sh
+  java -version
+    
+  openjdk version "21.0.6" 2025-01-21 LTS
+  OpenJDK Runtime Environment Temurin-21.0.6+7 (build 21.0.6+7-LTS)
+  OpenJDK 64-Bit Server VM Temurin-21.0.6+7 (build 21.0.6+7-LTS, mixed mode, sharing)
+  ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Installation 🌱 <a id="installation"></a>
+
+#### 1. Clone the repo
+
+- Run this command in terminal
+  
+  ```sh
+  git clone https://github.com/CabbitKheema/event-driven-simulation-of-probabilistic-heat-transfer-in-gases.git
+  ```
+
+#### 2. Assume files in `data` directory to be unchanged to avoid pushing updates to base which would delete the template for simulation test case generation <a id="assume-unchanged"></a>
+
+- Run this command in terminal
+  
+  ```sh
+  git ls-files data | xargs git update-index --assume-unchanged
+  ```
+
+  > To reverse this assumption, run the following command:
+
+  ```sh
+  git ls-files data | xargs git update-index --no-assume-unchanged
+  ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Begin Simulation 🚀 <a id="begin-simulation"></a>
+
+#### 1. Make the file `run_probabilistic_heat_transfer.sh` executable
+
+- Run this command in terminal to change file permission
+
+  ```sh
+  chmod +x run_probabilistic_heat_transfer.sh
+  ```
+
+#### 2. Tweak argument file for simulation test case generation (if necessary)
+
+- Change `data/argument.txt` file contents to tweak the simulation test case
+  
+  ```js
+  200       // Number of particles in the simulation
+  0.02      // Size of blocker particles
+  -0.005    // Left side particle min velocity
+  0.005     // Left side particle max velocity
+  0.005     // Left side particle min radius
+  0.01      // Left side particle max radius
+  0.4       // Left side particle min mass
+  0.5       // Left side particle max mass
+  -0.0005   // right side particle min velocity
+  0.0005    // right side particle max velocity
+  0.005     // right side particle min radius
+  0.01      // right side particle max radius
+  0.4       // right side particle min mass
+  0.5       // right side particle max mass
+  ```
+
+  > Remove comments before next step
+
+#### 3. Start simulating heat transfer between particles
+
+- For linux, run the following command in `terminal`
+
+  ```sh
+  ./run_probabilistic_heat_transfer.sh
+  ```
+
+- For windows, run the following command in `git bash`
+
+  ```sh
+  bash ./run_probabilistic_heat_transfer.sh
+  ```
+- Verify this output
+  
+  ```sh
+  Compiling Java files...
+  Note: src\MinPQ.java uses unchecked or unsafe operations.
+  Note: Recompile with -Xlint:unchecked for details.
+  Generating simulation input...
+  Running CollisionSystem...
+  Execution completed successfully!
+  ```
+
+#### 4. Event-driven simulation for **_200_** particles
+
+https://github.com/user-attachments/assets/4193918d-8a27-4d56-96e6-885087edbc79
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -240,22 +413,22 @@ https://github.com/user-attachments/assets/4193918d-8a27-4d56-96e6-885087edbc79
 
 ### <a id="probabilistic-nature-of-heat-transfer"></a> 🤔 Why do fast-moving (hot) particles tend to move into the colder region more frequently than slow-moving (cold) particles move into the hotter region?
 
-#### Random Motion & Collisions:
+#### 1. Random Motion & Collisions:
 
 - Particles in a gas or liquid are always moving and colliding.
 - The hotter region has more high-energy (fast) particles, while the colder region has more low-energy (slow) particles.
 
-#### Maxwell-Boltzmann Distribution:
+#### 2. Maxwell-Boltzmann Distribution:
 
 - The speed (kinetic energy) of particles follows a probability distribution.
 - At higher temperatures, the distribution is skewed toward higher speeds, meaning more particles have enough energy to cross the gap.
 
-#### Net Energy Transfer (Hot → Cold):
+#### 3. Net Energy Transfer (Hot → Cold):
 
 - Even though individual movements are random, when summed over many particles, there is a net flow of energy from hot to cold.
 - This follows the Second Law of Thermodynamics, which states that entropy (disorder) increases over time, driving energy to spread out.
 
-#### Energy Exchange & Probability:
+#### 4. Energy Exchange & Probability:
 
 - Some fast-moving particles from the hot region randomly move into the cold region through the small gap.
 - Some slow-moving particles from the cold region randomly move into the hot region.
@@ -367,7 +540,7 @@ The following describes different collisions the particles would experience in o
 
 ### <a id="implementation-in-java"></a> 🖥️ Implementation in java
 
-The `Particle.java`, `CollisionSystem.java`, and `Event.java` classes from [_Algorithms, 4th Edition_][algorithms-4th-edition-url] by Robert Sedgewick and Kevin Wayne provide a framework for simulating particles undergoing elastic collisions within a unit box using an event-driven approach.
+The `Particle.java`, `CollisionSystem.java`, and `Event.java` classes from [_Algorithms, 4th Edition_][algorithms-4th-edition-url] by **Robert Sedgewick** and **Kevin Wayne** provide a framework for simulating particles undergoing elastic collisions within a unit box using an event-driven approach.
 
 #### Particle.java
 
@@ -400,6 +573,8 @@ Together, these classes demonstrate the application of algorithms and data struc
 <!-- USAGE -->
 
 ## Usage
+
+Check <a href="#begin-simulation">this</a>. 👆
 
 <!-- ROADMAP -->
 
@@ -495,3 +670,5 @@ Project Link: [https://github.com/CabbitKheema/event-driven-simulation-of-probab
 [event-java-source-code-url]: https://github.com/kevin-wayne/algs4/blob/6157ca02644bdc24892ffbac1cf449d5169e71de/src/main/java/edu/princeton/cs/algs4/CollisionSystem.java#L137
 [algorithms-part-i-url]: https://www.coursera.org/learn/algorithms-part1
 [coursera-url]: https://www.coursera.org/
+[Java]: https://img.shields.io/badge/JAVA-3a75b0?style=for-the-badge
+[Java-url]: https://www.java.com/
