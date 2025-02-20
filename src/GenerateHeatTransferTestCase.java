@@ -1,6 +1,7 @@
+package src;
+
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdRandom;
-
 
 public class GenerateHeatTransferTestCase {
     public static void main(String[] args) {

@@ -7,6 +7,7 @@
  *  radius, and mass.
  *
  ******************************************************************************/
+package src;
 
 import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdRandom;
@@ -27,6 +28,7 @@ import java.awt.Color;
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
+
 public class Particle {
     private static final double INFINITY = Double.POSITIVE_INFINITY;
 

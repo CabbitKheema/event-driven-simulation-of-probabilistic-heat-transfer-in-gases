@@ -1,3 +1,5 @@
+package src;
+
 public class MinPQ <Key extends Comparable<Key>>{
     private Key[] pq;
     private int N = 0;
