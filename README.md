@@ -593,6 +593,53 @@ Check <a href="#begin-simulation">this</a>. 👆
 
 ## Roadmap
 
+### **Phase 1: Initial Research and Setup**
+- **Day 1: 16-02-2025**
+  - [x] Researched **Fourier's Law of Heat Conduction** and **Heat and Mass Transfer**
+  - [x] Compiled references and notes for heat simulation
+  - [x] Reference: [Fourier's Law of Heat Conduction](https://youtu.be/C3OIj7iYCF8?si=loDSwJJor-tv5pM_)
+
+### **Phase 2: Core Simulation Development**
+- **Day 2: 17-02-2025**
+  - [x] Implemented a **min-priority queue (MinPQ)** with a resizable array
+  - [x] Added corresponding test class for MinPQ
+  - [x] Updated comments in `MinPQ.java`
+  - [x] Included helper JAR file for external dependencies
+  - [x] Reference: [algs4](https://algs4.cs.princeton.edu/code/)
+
+- **Day 3: 18-02-2025**
+  - [x] Added basic simulation for particles colliding with walls
+  - [x] Added event-driven simulation for:
+    - [x] Particle-particle collisions
+    - [x] Particle-wall collisions using `MinPQ`
+  - [x] Created simulation test case generator:
+    - [x] Generated data for `CollisionSystem.java`
+    - [x] Added argument configuration via `data/argument.txt`
+    - [x] Configured example input (`data/simulation_demo_input.txt`) with particles of varying velocities
+  - [x] Implemented execution script: `run_probabilistic_heat_transfer.sh`
+
+### **Phase 3: Code Restructuring and Optimization**
+- **Day 4: 20-02-2025**
+  - [x] Restructured file system for better organization
+  - [x] Resolved cross-platform execution issues (Windows & Linux)
+  - [x] Added package names after moving Java files to `src/`
+  - [x] Integrated `algs4` as a submodule to simplify classpath settings in IDE
+
+### **Phase 4: Documentation and Testing**
+- **Day 5: 21-02-2025**
+  - [x] Updated the `README.md`:
+    - [x] Fixed bold and italic formatting issues
+    - [x] Added **(back-to-top)** links for easy navigation
+    - [x] Replaced video demonstrations with GIFs
+    - [x] Added a comprehensive **roadmap section**
+
+---
+
+### **Pending Tasks**
+  - [ ] Add an online demo
+
+See the [open issues](https://github.com/CabbitKheema/event-driven-simulation-of-probabilistic-heat-transfer-in-gases/issues) for a full list of proposed features (and known issues).
+
 <!-- CONTRIBUTING -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
