@@ -92,7 +92,7 @@
 
 Heat transfer is often seen as a straightforward flow from hot to cold, but at the microscopic level, it’s driven by probability. Particle motion and collisions occur randomly, making energy exchange a matter of chance rather than certainty. This simulation captures that randomness through an event-driven model of individual particle interactions. A non-conductive barrier with a small gap allows for limited, probabilistic exchanges, reflecting the stochastic nature of molecular diffusion and conduction. This approach offers a clear, intuitive visualization of how random interactions govern heat transfer—revealing dynamics that traditional models often overlook.
 
-### Why This Approach is Superior?
+### Why This Approach is Better?
 
 - **Realistic Particle Dynamics:** The simulation models individual particle interactions rather than relying on bulk thermodynamic equations, providing a more granular and accurate visualization of heat transfer phenomena.
 
