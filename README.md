@@ -475,11 +475,11 @@ The Brute-force approach would be to use a Time-driven simulation which follows 
     <img src="./images/time_driven_simulation_draw_backs.png" alt="time_driven_simulation_draw_backs.png" width="700px" />
 </div>
 
-- **~ _N²/ 2_** overlap checks per time quantum.
+- **~_N²/ 2_** overlap checks per time quantum.
 - Simulation is too slow if **_dt_** is very small.
 - May miss collisions if **_dt_** is too large. (if colliding particles fail to overlap when we are looking)
 
-In order to have a simulation that scales well, the technique we choose must complete the task in at least **~ _N log N_** time complexity.
+In order to have a simulation that scales well, the technique we choose must complete the task in at least **~_N log N_** time complexity.
 
 #### 🥂 **Event-driven simulation**
 
