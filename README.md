@@ -249,7 +249,9 @@ Download and install **JDK (Java Development Kit)** and **JRE (Java Runtime Envi
 
 #### 4. Event-driven simulation for **_200_** particles
 
-https://github.com/user-attachments/assets/4193918d-8a27-4d56-96e6-885087edbc79
+<div align="center">
+    <img src="./images/normal_heat_transfer_200_particles.gif" alt="normal_heat_transfer_200_particles.gif" width="500px" />
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -407,7 +409,9 @@ The following steps help us in understanding the probabilistic nature of heat tr
 
 7. This allows the two closed systems to behave as open systems with the gap acting as a place where heat is transmitted by molecular conduction
 
-https://github.com/user-attachments/assets/4193918d-8a27-4d56-96e6-885087edbc79
+<div align="center">
+    <img src="./images/normal_heat_transfer_200_particles.gif" alt="normal_heat_transfer_200_particles.gif" width="500px" />
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -437,10 +441,7 @@ https://github.com/user-attachments/assets/4193918d-8a27-4d56-96e6-885087edbc79
 The probabilistic nature of heat transfer from hot to cold region is clearer when the number of particles in the isolated system increases.
 
 <div align="center">
-    <video width="500px" controls>
-        <source src="./videos/normal_heat_transfer_1000_particles.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <img src="./images/normal_heat_transfer_1000_particles.gif" alt="normal_heat_transfer_1000_particles.gif" width="500px" />
 </div>
 
 According to most sources, a cubic centimeter of air contains approximately **_2.7 × 10¹⁹_** molecules. When this many particles are involved, the transfer of heat from a cold region to a hot region is improbable (almost zero), which is why heat always travels from hot regions to cold regions and not the other way around.
