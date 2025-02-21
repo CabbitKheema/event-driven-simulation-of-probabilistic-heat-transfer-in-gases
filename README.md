@@ -265,9 +265,11 @@ Simulations are widely used in various fields, including:
 - 🎮 **Gaming & Virtual Reality**: Creating realistic environments and AI behavior.
 - 🌦️ **Weather Forecasting**: Simulating atmospheric conditions to predict future weather.
 
-Simulation is a powerful tool for understanding complex physical processes, such as heat transfer. In thermodynamics, heat transfer occurs due to the movement of energy between particles, often driven by random motion and probabilistic interactions. To accurately model this behavior, it is essential to understand key thermodynamic concepts, the steps involved in simulating heat transfer between particles, and the role of probability in determining energy exchange.
+Simulation is a powerful tool for understanding complex physical processes, such as heat transfer. In thermodynamics, heat transfer occurs due to the movement of energy between particles, often driven by random motion and probabilistic interactions. To accurately model this behavior, it is essential to understand key thermodynamic concepts, the steps involved in simulating heat transfer between particles, and the role of probability in determining .
 
-One effective approach to handling these interactions is **event-driven simulation**, which can be efficiently implemented using a **Minimum Priority Queue (MinPQ)**. This method allows for precise tracking of particle collisions and heat transfer events. In this project, we implement a 2D particle-based heat transfer simulation in Java, making use of MinPQs to model realistic energy exchange dynamics.
+One effective approach to handling these interactions is **event-driven simulation**, which can be efficiently implemented using a **Minimum Priority Queue (MinPQ)**. This method allows for precise tracking of particle collisions and heat transfer events. In this project, we implement a 2D particle-based heat transfer simulation in Java, making use of MinPQs to model realistic  dynamics.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### 📚🔥 Basic terms to know in Thermodynamics <a id="basic-terms"></a>
 
@@ -434,6 +436,8 @@ https://github.com/user-attachments/assets/4193918d-8a27-4d56-96e6-885087edbc79
 - Some slow-moving particles from the cold region randomly move into the hot region.
 - However, on average, more high-energy particles move into the cold region than the other way around, because there are more of them on the hot side.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 The probabilistic nature of heat transfer from hot to cold region is clearer when the number of particles in the isolated system increases.
 
 <div align="center">
@@ -481,6 +485,8 @@ The Brute-force approach would be to use a Time-driven simulation which follows 
 
 In order to have a simulation that scales well, the technique we choose must complete the task in at least **~_N log N_** time complexity.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 #### 🥂 **Event-driven simulation**
 
 Event-driven simulation is a computational approach where system changes occur at discrete events rather than at fixed time steps. Instead of updating all elements at regular intervals, the simulation processes only the next scheduled event, improving efficiency, especially in systems with infrequent interactions. A **priority queue** (MinPQ) is commonly used to manage events, ensuring that they are processed in chronological order. This method is widely used in physics simulations, network modeling, and queuing systems, where interactions between entities happen sporadically rather than continuously.
@@ -511,6 +517,8 @@ The following describes different collisions the particles would experience in o
     <img src="./images/predicting_and_resolving_a_particle_wall_collision.png" alt="predicting_and_resolving_a_particle_wall_collision.png" width="700px" />
 </div>
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 #### ⏰ **Predicting a particle-particle collision**
 
 - **Particle i:** radius **_sᵢ_**, position **_(rxᵢ, ryᵢ)_**, velocity **_(vxᵢ, vyᵢ)_**.
@@ -525,6 +533,8 @@ The following describes different collisions the particles would experience in o
          alt="predicting_a_particle_particle_collision.png" 
          width="700px" style="display: block; margin: 0; padding: 0;" />
 </div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 #### 💥 **Resolving a particle-particle collision**
 
