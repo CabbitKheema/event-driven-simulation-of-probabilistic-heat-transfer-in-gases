@@ -267,7 +267,7 @@ Simulations are widely used in various fields, including:
 - 🎮 **Gaming & Virtual Reality**: Creating realistic environments and AI behavior.
 - 🌦️ **Weather Forecasting**: Simulating atmospheric conditions to predict future weather.
 
-Simulation is a powerful tool for understanding complex physical processes, such as heat transfer. In thermodynamics, heat transfer occurs due to the movement of energy between particles, often driven by random motion and probabilistic interactions. To accurately model this behavior, it is essential to understand key thermodynamic concepts, the steps involved in simulating heat transfer between particles, and the role of probability in determining .
+Simulation is a powerful tool for understanding complex physical processes, such as heat transfer. In thermodynamics, heat transfer occurs due to the movement of energy between particles, often driven by random motion and probabilistic interactions. To accurately model this behavior, it is essential to understand key thermodynamic concepts, the steps involved in simulating heat transfer between particles, and the role of probability in determining energy exchange.
 
 One effective approach to handling these interactions is **event-driven simulation**, which can be efficiently implemented using a **Minimum Priority Queue (MinPQ)**. This method allows for precise tracking of particle collisions and heat transfer events. In this project, we implement a 2D particle-based heat transfer simulation in Java, making use of MinPQs to model realistic  dynamics.
 
